@@ -749,6 +749,7 @@ class PlayState extends MusicBeatState
 					bg.antialiasing = false;
 					add(bg);
 
+                }
 					default: //custom stages
 				isPixelStage = stageData.isPixelStage;
 				for (layer in stageData.layerArray) {

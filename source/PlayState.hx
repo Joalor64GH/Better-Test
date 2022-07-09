@@ -407,6 +407,7 @@ class PlayState extends MusicBeatState
 				boyfriend: [770, 100],
 				girlfriend: [400, 130],
 				opponent: [100, 100],
+				layerArray: [],
 				hide_girlfriend: false,
 			
 				camera_boyfriend: [0, 0],
@@ -747,6 +748,15 @@ class PlayState extends MusicBeatState
 					bg.scale.set(6, 6);
 					bg.antialiasing = false;
 					add(bg);
+
+					default: //custom stages
+				isPixelStage = stageData.isPixelStage;
+				for (layer in stageData.layerArray) {
+					var loadedLayer:BGSprite = new BGSprite(layer.directory, layer.xAxis, layer.yAxis, layer.scrollX, layer.scrollY);
+					loadedLayer.setGraphicSize(Std.int(loadedLayer.width * layer.scale));
+					loadedLayer.flipX = layer.flipX;
+					loadedLayer.flipY = layer.flipY;
+					add(loadedLayer);
 				}
 		}
 

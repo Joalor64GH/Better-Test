@@ -400,6 +400,7 @@ class PlayState extends MusicBeatState
 		var stageData:StageFile = StageData.getStageFile(curStage);
 		if(stageData == null) { //Stage couldn't be found, create a dummy stage for preventing a crash
 			stageData = {
+				name: "",
 				directory: "",
 				defaultZoom: 0.9,
 				isPixelStage: false,
